@@ -33,7 +33,6 @@ def script_options():
         #no options were passed
         script_usage()
         sys.exit(2)
-
     return inputfile, outputfile
 
 
@@ -65,13 +64,11 @@ def post_insert_formatting( worksheet, bg_red, bg_green ):
     worksheet.set_column('K:K', 9)
     worksheet.set_column('L:L', 13)
     worksheet.set_column('M:M', 11)
-
     # Write a conditional format over a range. Format background to red if "Item Type" is "Baby Food"
     worksheet.conditional_format('C2:C10000', {'type': 'text',
                                              'criteria': 'containing',
                                              'value': 'Baby Food',
                                              'format': bg_red})
-
     # Write a conditional format over a range. Format background to green if "Units Sold" greater than 5000
     worksheet.conditional_format('I2:I10000', {'type': 'cell',
                                              'criteria': '>',
