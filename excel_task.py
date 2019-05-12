@@ -18,7 +18,6 @@ def script_options():
         print("%s: %s" % (sys.argv[0], GetoptErrorMSG))
         print("Try '%s -h or --help'" % (sys.argv[0]))
         sys.exit(2)
-
     #check if any options were passed
     if len(opts) > 0:
         for opt, arg in opts:
